@@ -71,19 +71,6 @@ int main(){
         cin >> months[rep].leastInDay;
     }
 
-    string mostMonth = "January", leastMonth = "January";
-    int mostLand = months[0].mostInDay, smallLand = months[0].leastInDay;
-    for (int i = 0; i < 12; i++){
-        if (months[i].mostInDay > mostLand){
-            mostLand = months[i].mostInDay;
-            mostMonth = monthNames[i];
-        }
-        if (months[i].leastInDay < smallLand){
-            smallLand = months[i].leastInDay;
-            leastMonth = monthNames[i];
-        }
-    }
-
     cout << "The average monthly landings for the year is " << setprecision(2) << calcArrivals(months)/12.0 << endl;
     cout << "The average monthly departures for the year is " << setprecision(2) << calcTakeOffs(months)/12.0 << endl;
     cout << "The total landings for the year is " << calcArrivals(months) << endl;
