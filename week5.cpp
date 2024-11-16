@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 struct airport {
     int planeDepart;
@@ -8,6 +9,11 @@ struct airport {
     int leastInDay;
 };
 int main(){
+    cout << "Student name:" << setw(18) << "Glen Dsouza" << endl;
+    cout << "Student number:" << setw(14) << "900914917" << endl;
+    cout << "Student name:" << setw(24) << "Jordon Marchesano" << endl;
+    cout << "Student number:" << setw(14) << "900536880" << endl;
+    cout << endl << endl;
     string getMonth(int);
     int singleDepart, singleArrive, bigInDay, smallInDay;
     int totalLandings = 0, totaltakeOffs = 0;
@@ -31,7 +37,7 @@ int main(){
         cin >> smallInDay;
         months[rep].leastInDay = smallInDay;
     }
-    string mostMonth, leastMonth;
+    string mostMonth = "January", leastMonth = "January";
     int mostLand = months[0].mostInDay, smallLand = months[0].leastInDay;
     for (int rep = 0; rep < 12; rep++){
         if (months[rep].mostInDay > mostLand){
@@ -43,12 +49,14 @@ int main(){
             leastMonth = getMonth(rep);
         }
     }
-    cout << "The average monthly landings for the year is " << totalLandings/12.0 << endl;
-    cout << "The average monthly departures for the year is " << totaltakeOffs/12.0 << endl;
+    cout << "The average monthly landings for the year is " << setPrecision(2) << totalLandings/12.0 << endl;
+    cout << "The average monthly departures for the year is " << setPrecision(2) << totaltakeOffs/12.0 << endl;
     cout << "The total landings for the year is " << totalLandings << endl;
     cout << "The total departures for the year is " << totaltakeOffs << endl;
     cout << "The greatest number of planes that landed in a single day is " << mostLand << " which occured in the month of " << mostMonth << endl;
     cout << "The least number of planes that landed in a single day is " << smallLand << " which occured in the month of " << leastMonth << endl;
+    cin.ignore();
+    cin.get();
     return 0;
 }
 string getMonth(int month){
