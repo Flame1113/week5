@@ -71,8 +71,8 @@ int main(){
         cin >> months[rep].leastInDay;
     }
 
-    cout << "The average monthly landings for the year is " << setprecision(2) << calcArrivals(months)/12.0 << endl;
-    cout << "The average monthly departures for the year is " << setprecision(2) << calcTakeOffs(months)/12.0 << endl;
+    cout << "The average monthly landings for the year is " << fixed << setprecision(2) << calcArrivals(months)/12.0 << endl;
+    cout << "The average monthly departures for the year is " << fixed << setprecision(2) << calcTakeOffs(months)/12.0 << endl;
     cout << "The total landings for the year is " << calcArrivals(months) << endl;
     cout << "The total departures for the year is " << calcTakeOffs(months) << endl;
     cout << "The greatest number of planes that landed in a single day is " << months[calcMostLand(months)].mostInDay << " which occured in the month of " << monthNames[calcMostLand(months)] << endl;
